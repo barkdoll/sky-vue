@@ -23,6 +23,7 @@
 const axios = require('axios')
 const apiConfig = require('../../api-config.js')
 const AMPM = require('@/assets/AMPM.js')
+const twentyFourHr = require('@/assets/twentyFourHr.js')
 
 export default {
 	name: 'Weather',
@@ -31,7 +32,8 @@ export default {
 			title: 'Sky Vue Weather App',
 			search: '',
 			results: '',
-			err: 'Please search for a location'
+			err: 'Please search for a location',
+			lang: 'en'
 		}
 	},
 	methods: {
@@ -54,7 +56,11 @@ export default {
 			return this.results.current.condition.text
 		},
 		iconURL() { return `https:${this.results.current.condition.icon}` },
-		time() { return this.results.location.localtime },
+		time() {
+			return this.lang === 'en' ?
+							AMPM(this.results.location.localtime) :
+							twentyFourHr(this.results.location.localtime)
+		},
 		city() {
 
 		},
