@@ -6,7 +6,7 @@
 		<section v-if="err"
 			style="padding-top:2em;">
 			{{ err }}</section>
-		<section v-else>
+		<section id="weather-display" class="slide-fade" v-else>
 			<h2>{{ location }} ({{ country }})</h2>
 			<div id="current">
 				<img v-if="iconURL"
@@ -102,5 +102,27 @@ a {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+#weather-display {
+	transition: 1s all;
+	position: relative;
+}
+
+.slide-fade {
+	transition: 1s all;
+	animation: slide-fade 1s;
+}
+
+@keyframes slide-fade {
+	0% {
+		opacity: 0;
+		transform: translateY(-10px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }
 </style>
