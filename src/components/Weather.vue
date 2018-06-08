@@ -8,6 +8,7 @@
 			{{ err }}</section>
 		<Display
 			:results="results"
+			:lang="lang"
 			v-else />
 	</div>
 </template>

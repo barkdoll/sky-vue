@@ -19,7 +19,7 @@ const twentyFourHr = require('@/assets/twentyFourHr.js')
 import Display from './Display'
 export default {
 	name: 'Display',
-	props: ['results'],
+	props: ['results', 'lang'],
 	data () {
 		return {}
 	},
