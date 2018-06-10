@@ -1,5 +1,5 @@
 # Sky Vue Weather App
-> Weather API front-end app in Vue
+> Weather API front-end app in Vue<br>
 > Displays the weather in any location you search
 
 ## Build Setup
