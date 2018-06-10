@@ -22,7 +22,7 @@ export default {
 
 
 body {
-	background: url('http://vunature.com/wp-content/uploads/2017/01/landscapes-japan-lake-beauty-animal-fog-birds-sky-beautiful-landscape-wonderful-nature-wallpapers-hd.jpg');
+	background: url('https://wallpapercave.com/wp/R6lJpMc.jpg');
 	background-attachment: fixed;
 	background-size: cover;
 	background-repeat: no-repeat;

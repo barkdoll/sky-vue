@@ -1,5 +1,5 @@
 {
-  "name": "weather-vue",
+  "name": "sky-vue",
   "version": "1.0.0",
   "description": "Weather API front-end app in Vue",
   "author": "Jesse Barkdoll <jessebarkdoll@gmail.com>",
@@ -89,5 +89,23 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "main": ".eslintrc.js",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/barkdoll/sky-vue.git"
+  },
+  "keywords": [
+    "weather",
+    "vuejs",
+    "vue"
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/barkdoll/sky-vue/issues"
+  },
+  "homepage": "https://github.com/barkdoll/sky-vue#readme"
 }

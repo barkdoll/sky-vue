@@ -1,8 +1,11 @@
 <template>
 	<div class="hello">
 		<h1>{{ title }}</h1>
-		<input type="text" v-model="search" />
-		<button type="submit" @click="weather" >Submit</button>
+		<input type="text"
+			v-model="search"
+			@keyup.enter="weather" />
+		<button type="submit" @click="weather">
+			Submit</button>
 		<section v-if="err"
 			style="padding-top:2em;">
 			{{ err }}</section>
@@ -38,7 +41,7 @@ export default {
 			let query = this.search
 			axios.get(`https://api.apixu.com/v1/current.json?key=${apiConfig.API_KEY}&q=${this.search}`)
 				.then(response => {
-					this.err = null;
+					this.err = null
 					this.results = response.data
 				})
 				.catch(e => {

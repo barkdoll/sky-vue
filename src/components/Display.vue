@@ -12,7 +12,6 @@
 </template>
 
 <script>
-const axios = require('axios')
 const apiConfig = require('../../api-config.js')
 const AMPM = require('@/assets/AMPM.js')
 const twentyFourHr = require('@/assets/twentyFourHr.js')
@@ -25,18 +24,14 @@ export default {
 	},
 	methods: {},
 	computed: {
-		current() {
-			return this.$props.results.current.condition.text
-		},
+		current() { return this.$props.results.current.condition.text },
 		iconURL() { return `https:${this.$props.results.current.condition.icon}` },
 		time() {
 			return this.lang === 'en' ?
 							AMPM(this.$props.results.location.localtime) :
 							twentyFourHr(this.$props.results.location.localtime)
 		},
-		city() {
-			return this.$props.results.location.name
-		},
+		city() { return this.$props.results.location.name },
 		region() { return this.$props.results.location.region },
 		country() { return this.$props.results.location.country },
 		location() {
@@ -47,9 +42,9 @@ export default {
 	},
 	beforeMount() {
 		console.log('beforeUpdate initialized')
-		const weatherComp = document.getElementById('weather-display');
-		if (weatherComp.className === 'slide-fade-in') weatherComp.className = '';
-		weatherComp.className = 'slide-fade-in';
+		const weatherComp = document.getElementById('weather-display')
+		if (weatherComp.className === 'slide-fade-in') weatherComp.className = ''
+		weatherComp.className = 'slide-fade-in'
 	},
 	updated() {
 		// const weatherComp = document.getElementById('weather-display');
@@ -86,7 +81,7 @@ export default {
 @keyframes slide-fade-in {
 	0% {
 		opacity: 0;
-		transform: translateY(-10px);
+		transform: translateY(10px);
 	}
 
 	100% {
