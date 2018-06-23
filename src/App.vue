@@ -20,7 +20,6 @@ export default {
 	margin-top: 60px;
 }
 
-
 body {
 	background: url('https://wallpapercave.com/wp/R6lJpMc.jpg');
 	background-attachment: fixed;

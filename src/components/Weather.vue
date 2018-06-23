@@ -9,25 +9,23 @@
 		<section v-if="err"
 			style="padding-top:2em;">
 			{{ err }}</section>
-		<Display
+		<Display v-else
 			:results="results"
-			:lang="lang"
-			v-else />
+			:lang="lang" />
 	</div>
 </template>
 
 <script>
-const axios = require('axios')
-const apiConfig = require('../../api-config.js')
-const AMPM = require('@/assets/AMPM.js')
-const twentyFourHr = require('@/assets/twentyFourHr.js')
 import Display from './Display'
+import axios from 'axios'
+import apiConfig from '../../api-config.js'
+
 export default {
 	name: 'Weather',
 	components: {
 		Display: Display
 	},
-	data () {
+	data() {
 		return {
 			title: 'Sky Vue Weather App',
 			search: '',

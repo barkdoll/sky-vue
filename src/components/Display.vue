@@ -12,27 +12,30 @@
 </template>
 
 <script>
-const apiConfig = require('../../api-config.js')
 const AMPM = require('@/assets/AMPM.js')
 const twentyFourHr = require('@/assets/twentyFourHr.js')
-import Display from './Display'
+
 export default {
 	name: 'Display',
 	props: ['results', 'lang'],
-	data () {
+	data() {
 		return {}
 	},
-	methods: {},
+	methods: {
+		replaceLongO(s) {
+			return s.replace(/Å/g, 'ō')
+		}
+	},
 	computed: {
 		current() { return this.$props.results.current.condition.text },
 		iconURL() { return `https:${this.$props.results.current.condition.icon}` },
 		time() {
-			return this.lang === 'en' ?
-							AMPM(this.$props.results.location.localtime) :
-							twentyFourHr(this.$props.results.location.localtime)
+			return this.lang === 'en'
+				? AMPM(this.$props.results.location.localtime)
+				: twentyFourHr(this.$props.results.location.localtime)
 		},
-		city() { return this.$props.results.location.name },
-		region() { return this.$props.results.location.region },
+		city() { return this.replaceLongO(this.$props.results.location.name) },
+		region() { return this.replaceLongO(this.$props.results.location.region) },
 		country() { return this.$props.results.location.country },
 		location() {
 			return this.region
